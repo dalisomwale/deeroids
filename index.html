@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeeRoids - Premium Graphic Design Studio</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white font-sans">
+    <!-- Include Navigation -->
+    <div id="navigation"></div>
+
+    <!-- Include Hero Section -->
+    <div id="hero"></div>
+
+    <!-- Include About Section -->
+    <div id="about"></div>
+
+    <!-- Include Services Section -->
+    <div id="services"></div>
+
+    <!-- Include Portfolio Section -->
+    <div id="portfolio"></div>
+
+    <!-- Include Testimonials Section -->
+    <div id="testimonials"></div>
+
+    <!-- Include Contact Section -->
+    <div id="contact"></div>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <!-- Local JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/lazy-load.js"></script>
+
+    <!-- Load Components -->
+    <script>
+        // Load all components
+        const components = [
+            'navigation', 'hero', 'about', 'services', 
+            'portfolio', 'testimonials', 'contact', 'footer'
+        ];
+
+        components.forEach(component => {
+            fetch(`components/${component}.html`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(component).innerHTML = data;
+                })
+                .catch(error => console.error(`Error loading ${component}:`, error));
+        });
+    </script>
+</body>
+</html>

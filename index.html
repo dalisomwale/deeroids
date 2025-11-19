@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Local CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body class="bg-white font-sans">
     <!-- Include Navigation -->
@@ -40,9 +40,9 @@
     <div id="footer"></div>
 
     <!-- Local JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/lazy-load.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/lazy-load.js"></script>
 
     <!-- Load Components -->
     <script>
@@ -57,7 +57,7 @@
         let loadedCount = 0;
 
         components.forEach(component => {
-            fetch(`components/${component}.html`)
+            fetch(`./components/${component}.html`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Failed to load ${component}: ${response.status}`);
@@ -94,6 +94,8 @@
                 })
                 .catch(error => {
                     console.error(`Error loading ${component}:`, error);
+                    // Fallback: Create empty div to prevent breaking layout
+                    document.getElementById(component).innerHTML = '<div></div>';
                     loadedCount++;
                 });
         });

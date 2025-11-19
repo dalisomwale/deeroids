@@ -1,5 +1,7 @@
 // Main JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing main functionality...');
+    
     // Mobile menu functionality with event delegation
     document.addEventListener('click', function(event) {
         // Mobile menu toggle
@@ -38,6 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize portfolio filtering after components are loaded
     initializePortfolioFiltering();
+    
+    // Portfolio item click handlers - use event delegation
+    document.addEventListener('click', function(event) {
+        if (event.target.closest('.portfolio-item')) {
+            const portfolioItem = event.target.closest('.portfolio-item');
+            const modalId = portfolioItem.getAttribute('data-modal');
+            if (modalId) {
+                console.log('Portfolio item clicked, opening modal:', modalId);
+                openModal(modalId);
+            }
+        }
+    });
     
     // Contact form handling
     const contactSubmit = document.getElementById('contactSubmit');
@@ -84,17 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Portfolio item click handlers - use event delegation
-    document.addEventListener('click', function(event) {
-        if (event.target.closest('.portfolio-item')) {
-            const portfolioItem = event.target.closest('.portfolio-item');
-            const modalId = portfolioItem.getAttribute('data-modal');
-            if (modalId) {
-                openModal(modalId);
-            }
-        }
-    });
-    
     // Add fadeIn animation for CSS
     const style = document.createElement('style');
     style.textContent = `
@@ -119,15 +122,21 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.add('bg-white/90');
         }
     });
+    
+    console.log('Main functionality initialized');
 });
 
 // Portfolio filtering functionality
 function initializePortfolioFiltering() {
+    console.log('Initializing portfolio filtering...');
+    
     // Use event delegation for filter buttons
     document.addEventListener('click', function(event) {
         if (event.target.closest('.filter-btn')) {
             const button = event.target.closest('.filter-btn');
             const filter = button.getAttribute('data-filter');
+            
+            console.log('Filter button clicked:', filter);
             
             // Update active button
             const filterButtons = document.querySelectorAll('.filter-btn');
@@ -140,21 +149,35 @@ function initializePortfolioFiltering() {
             
             // Filter items
             const portfolioItems = document.querySelectorAll('.portfolio-item');
+            let visibleCount = 0;
+            
             portfolioItems.forEach(item => {
                 if (filter === 'all' || item.classList.contains(filter)) {
                     item.style.display = 'block';
                     // Add fade in animation
                     item.classList.add('fade-in');
                     setTimeout(() => item.classList.remove('fade-in'), 500);
+                    visibleCount++;
                 } else {
                     item.style.display = 'none';
                 }
             });
+            
+            console.log('Filtered to show', visibleCount, 'items');
         }
     });
+    
+    console.log('Portfolio filtering initialized');
 }
 
 // Reinitialize portfolio when components load
 function reinitializePortfolio() {
-    setTimeout(initializePortfolioFiltering, 100);
+    console.log('Reinitializing portfolio...');
+    setTimeout(() => {
+        initializePortfolioFiltering();
+    }, 100);
 }
+
+// Make functions globally available
+window.initializePortfolioFiltering = initializePortfolioFiltering;
+window.reinitializePortfolio = reinitializePortfolio;

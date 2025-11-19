@@ -46,6 +46,8 @@
 
     <!-- Load Components -->
     <script>
+        console.log('Starting component loading...');
+        
         // Load all components
         const components = [
             'navigation', 'hero', 'about', 'services', 
@@ -56,22 +58,44 @@
 
         components.forEach(component => {
             fetch(`components/${component}.html`)
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${component}: ${response.status}`);
+                    }
+                    return response.text();
+                })
                 .then(data => {
                     document.getElementById(component).innerHTML = data;
                     loadedCount++;
+                    console.log(`Loaded component: ${component} (${loadedCount}/${components.length})`);
                     
-                    // Reinitialize portfolio when portfolio component loads
-                    if (component === 'portfolio' && typeof reinitializePortfolio === 'function') {
-                        reinitializePortfolio();
+                    // Reinitialize when portfolio loads
+                    if (component === 'portfolio') {
+                        console.log('Portfolio component loaded, reinitializing...');
+                        setTimeout(() => {
+                            if (typeof reinitializePortfolio === 'function') {
+                                reinitializePortfolio();
+                            }
+                            if (typeof initializeModals === 'function') {
+                                initializeModals();
+                            }
+                        }, 200);
                     }
                     
-                    // Reinitialize all when all components are loaded
-                    if (loadedCount === components.length && typeof initializePortfolioFiltering === 'function') {
-                        setTimeout(initializePortfolioFiltering, 200);
+                    // Final initialization when all components are loaded
+                    if (loadedCount === components.length) {
+                        console.log('All components loaded successfully');
+                        setTimeout(() => {
+                            if (typeof initializePortfolioFiltering === 'function') {
+                                initializePortfolioFiltering();
+                            }
+                        }, 300);
                     }
                 })
-                .catch(error => console.error(`Error loading ${component}:`, error));
+                .catch(error => {
+                    console.error(`Error loading ${component}:`, error);
+                    loadedCount++;
+                });
         });
     </script>
 </body>

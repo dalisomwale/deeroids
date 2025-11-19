@@ -8,6 +8,7 @@ body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif; 
     overflow-x: hidden;
     line-height: 1.6;
+    color: #1a1a1a;
 }
 
 html { 
@@ -21,6 +22,22 @@ html {
         linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
 }
+
+/* Enhanced color palette */
+.text-primary { color: #1a1a1a; }
+.text-secondary { color: #4b5563; }
+.text-accent { color: #2563eb; }
+.text-muted { color: #6b7280; }
+
+.bg-primary { background-color: #1a1a1a; }
+.bg-secondary { background-color: #f8fafc; }
+.bg-accent { background-color: #2563eb; }
+.bg-muted { background-color: #f1f5f9; }
+
+.border-primary { border-color: #1a1a1a; }
+.border-secondary { border-color: #e5e7eb; }
+.border-accent { border-color: #2563eb; }
+.border-muted { border-color: #f1f5f9; }
 
 /* Navigation */
 .hidden-mobile { 
@@ -64,6 +81,7 @@ html {
     transition: opacity 0.5s ease;
     padding: 40px 20px;
     text-align: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
 }
 
 .portfolio-item:hover .portfolio-overlay {
@@ -84,7 +102,7 @@ html {
     opacity: 1;
 }
 
-/* Modal styles - Blue Theme */
+/* Modal styles - Enhanced Theme */
 .modal {
     display: none;
     position: fixed;
@@ -92,7 +110,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(8px);
     z-index: 1000;
     overflow-y: auto;
@@ -105,7 +123,7 @@ html {
 }
 
 .modal-content {
-    background: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     margin: 2% auto;
     width: 90%;
     max-width: 1200px;
@@ -113,6 +131,7 @@ html {
     overflow: hidden;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     animation: modalSlideIn 0.4s ease;
+    border: 1px solid #e5e7eb;
 }
 
 @keyframes modalSlideIn {
@@ -136,7 +155,7 @@ html {
     z-index: 1001;
     width: 50px;
     height: 50px;
-    background: rgba(59, 130, 246, 0.3);
+    background: rgba(26, 26, 26, 0.8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -146,7 +165,7 @@ html {
 }
 
 .close-modal:hover {
-    background: rgba(59, 130, 246, 0.5);
+    background: rgba(26, 26, 26, 1);
     transform: scale(1.1);
 }
 
@@ -178,7 +197,7 @@ html {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(59, 130, 246, 0.9);
+    background: rgba(26, 26, 26, 0.9);
     color: white;
     border: none;
     padding: 20px;
@@ -193,11 +212,13 @@ html {
     justify-content: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .prev:hover, .next:hover {
-    background: rgb(37, 99, 235);
+    background: rgb(0, 0, 0);
     transform: translateY(-50%) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .prev { left: 25px; }
@@ -226,7 +247,7 @@ html {
 .dot.active {
     background-color: white;
     transform: scale(1.2);
-    border-color: rgba(59, 130, 246, 0.8);
+    border-color: #1a1a1a;
 }
 
 .dot:hover {
@@ -241,7 +262,7 @@ html {
 .project-title {
     font-size: 32px;
     font-weight: bold;
-    color: #1e3a8a;
+    color: #1a1a1a;
     margin-bottom: 12px;
     line-height: 1.2;
 }
@@ -268,22 +289,22 @@ html {
 }
 
 .detail-item {
-    background: #f0f9ff;
+    background: #f8fafc;
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid #bae6fd;
+    border: 1px solid #e5e7eb;
     transition: all 0.3s ease;
 }
 
 .detail-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
-    border-color: #7dd3fc;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #d1d5db;
 }
 
 .detail-label {
     font-weight: 600;
-    color: #1e40af;
+    color: #1a1a1a;
     margin-bottom: 8px;
     font-size: 14px;
     text-transform: uppercase;
@@ -291,7 +312,7 @@ html {
 }
 
 .detail-value {
-    color: #1e3a8a;
+    color: #4b5563;
     font-weight: 500;
 }
 
@@ -317,9 +338,9 @@ html {
 }
 
 .btn-primary {
-    background: #2563eb;
+    background: #1a1a1a;
     color: white;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.3);
 }
 
 .btn-secondary {
@@ -329,19 +350,69 @@ html {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
+.btn-accent {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover {
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-    background: #1d4ed8;
+    box-shadow: 0 8px 25px rgba(26, 26, 26, 0.4);
+    background: #000000;
 }
 
 .btn-secondary:hover {
     background: #f9fafb;
     border-color: #9ca3af;
+}
+
+.btn-accent:hover {
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    background: #1d4ed8;
+}
+
+/* Enhanced section backgrounds */
+.section-dark {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+}
+
+.section-light {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.section-accent {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+}
+
+/* Card enhancements */
+.enhanced-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.enhanced-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #d1d5db;
+}
+
+/* Gradient text effects */
+.gradient-text {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Responsive improvements */
@@ -408,7 +479,7 @@ html {
     }
 }
 
-/* Custom blue theme enhancements */
+/* Custom color enhancements - Reduced blue usage */
 .text-blue-50 { color: #f0f9ff; }
 .text-blue-100 { color: #e0f2fe; }
 .text-blue-200 { color: #bae6fd; }
@@ -441,3 +512,17 @@ html {
 .border-blue-700 { border-color: #0369a1; }
 .border-blue-800 { border-color: #075985; }
 .border-blue-900 { border-color: #0c4a6e; }
+
+/* New color additions for better balance */
+.text-gray-900 { color: #1a1a1a; }
+.text-gray-800 { color: #1f2937; }
+.text-gray-700 { color: #374151; }
+.text-gray-600 { color: #4b5563; }
+.text-gray-500 { color: #6b7280; }
+
+.bg-gray-50 { background-color: #f9fafb; }
+.bg-gray-100 { background-color: #f3f4f6; }
+.bg-gray-200 { background-color: #e5e7eb; }
+
+.border-gray-200 { border-color: #e5e7eb; }
+.border-gray-300 { border-color: #d1d5db; }

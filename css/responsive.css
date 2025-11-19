@@ -1,7 +1,96 @@
 /* Additional responsive styles */
 @media (max-width: 768px) {
+    /* Global text size adjustments */
+    html {
+        font-size: 14px;
+    }
+    
+    /* Hero Section */
+    #home h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    #home p {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* About Section */
+    #about h2 {
+        font-size: 2rem !important;
+    }
+    
+    #about .grid-cols-2 {
+        gap: 2rem !important;
+    }
+    
+    /* Services Section */
+    #services h2 {
+        font-size: 2rem !important;
+    }
+    
+    .services-grid > div {
+        padding: 1.5rem !important;
+    }
+    
+    .services-grid .w-16 {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    
+    /* Portfolio Section */
+    #portfolio h2 {
+        font-size: 2rem !important;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.75rem 1rem !important;
+        font-size: 0.875rem !important;
+        margin: 0.25rem;
+    }
+    
+    /* Testimonials Section */
+    #testimonials h2 {
+        font-size: 2rem !important;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem !important;
+    }
+    
+    /* Contact Section */
+    #contact h2 {
+        font-size: 2rem !important;
+    }
+    
+    .contact-info .w-14 {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    
+    /* Navigation */
+    nav .text-2xl {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Footer */
+    footer .grid-cols-4 {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    footer .md\\:col-span-2 {
+        grid-column: span 1 !important;
+    }
+    
+    /* Modal adjustments */
     .slideshow-container {
-        height: 300px;
+        height: 250px;
     }
     
     .project-details {
@@ -13,15 +102,192 @@
     }
     
     .modal-content {
-        margin: 5% auto;
+        margin: 2% auto;
         width: 95%;
     }
     
     .modal-body {
-        padding: 20px;
+        padding: 1.5rem;
     }
     
     .project-title {
-        font-size: 24px;
+        font-size: 1.5rem;
+    }
+    
+    /* Button sizing */
+    .btn, 
+    a[href*="#"] {
+        padding: 0.875rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Icon sizing */
+    .w-12, .h-12 {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    
+    .w-10, .h-10 {
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+    
+    /* Spacing adjustments */
+    .py-24 {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+    
+    .py-16 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .mb-20 {
+        margin-bottom: 3rem !important;
+    }
+    
+    .mb-16 {
+        margin-bottom: 2rem !important;
+    }
+    
+    .mb-12 {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .mb-8 {
+        margin-bottom: 1rem !important;
+    }
+    
+    .mb-6 {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    /* Grid gaps */
+    .gap-16 {
+        gap: 2rem !important;
+    }
+    
+    .gap-8 {
+        gap: 1rem !important;
+    }
+    
+    .gap-6 {
+        gap: 0.75rem !important;
+    }
+    
+    /* Text sizing for smaller elements */
+    .text-5xl, .text-4xl {
+        font-size: 1.875rem !important;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem !important;
+    }
+    
+    .text-2xl {
+        font-size: 1.25rem !important;
+    }
+    
+    .text-xl {
+        font-size: 1.125rem !important;
+    }
+    
+    /* Reduce padding in cards and containers */
+    .p-8 {
+        padding: 1.5rem !important;
+    }
+    
+    .p-6 {
+        padding: 1rem !important;
+    }
+    
+    .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .py-4 {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    
+    /* Reduce rounded corners slightly for mobile */
+    .rounded-3xl {
+        border-radius: 1rem !important;
+    }
+    
+    .rounded-2xl {
+        border-radius: 0.75rem !important;
+    }
+    
+    /* Adjust absolute positioned decorative elements */
+    .absolute.w-72, .absolute.w-96, .absolute.h-72, .absolute.h-96 {
+        width: 12rem !important;
+        height: 12rem !important;
+    }
+    
+    /* Hero section specific adjustments */
+    #home .min-h-screen {
+        min-height: 80vh !important;
+        padding-top: 6rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    #home .text-5xl {
+        font-size: 2.25rem !important;
+    }
+    
+    #home .text-7xl {
+        font-size: 3rem !important;
+    }
+    
+    /* Portfolio grid adjustment */
+    .portfolio-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Contact form adjustments */
+    .contact-form .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Testimonial grid adjustment */
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Services grid adjustment */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+    
+    /* Further reduce sizes for very small screens */
+    #home h1 {
+        font-size: 2rem !important;
+    }
+    
+    .py-24 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .p-8 {
+        padding: 1rem !important;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.8rem !important;
     }
 }
